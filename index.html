@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Messenger App</title>
+	<meta charset="utf-8">
+	<!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+	<script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  const config = {
+	    apiKey: "AIzaSyCl9GuUtdl7FG6DCOBXlW_vxLuTdqdqBSA",
+	    authDomain: "messenger-app-clone.firebaseapp.com",
+	    databaseURL: "https://messenger-app-clone.firebaseio.com",
+	    projectId: "messenger-app-clone",
+	    storageBucket: "messenger-app-clone.appspot.com",
+	    messagingSenderId: "620696287267"
+	  };
+	  firebase.initializeApp(config);
+	</script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+    	const App = {
+    		currentRecipientId : null,
+    		currentRecipientName : null
+    	}
+    </script>
+            
+</head>
+<body>
+
+	<div class="sidebar">
+		<div class="side-header">
+			<p><a href="#" class="black-text">Messages</a></p>
+			<i class="material-icons grey-text">more_vert</i>
+		</div>
+
+		<div class="sub-header">
+		  	<a class="btn-floating btn-medium waves-effect waves-light white">
+		  		<i class="material-icons black-text	">add</i>
+		  	</a>
+		  	<span class="button-text">New Conversation</span>
+		</div>
+
+		<div class="contacts">
+			<ul id="contact-list">
+				
+			</ul>
+		</div>
+
+	</div>
+
+	<div class="main">
+		<nav>
+		    <div class="nav-wrapper blue accent-2">
+		        <a href="#" class="brand-logo" id="recipient-name"></a>
+		        <ul id="nav-mobile" class="right">
+			        <li><a><i class="material-icons">notifications</i></a></li>
+
+			        <!-- Dropdown Trigger -->
+			        <li>
+			        	<a id="auth-dropdown-button" class="dropdown-trigger" href="#" data-target="auth-dropdown">
+			        		<i class="material-icons">more_vert</i>
+				        </a>
+				    </li>
+
+					 <!-- Dropdown Structure -->
+					<ul id='auth-dropdown' class='dropdown-content'>
+						<li><a class="black-text" id="sign-in-button" href="#!">Sign in</a></li>
+						<li><a class="black-text" id="sign-out-button" href="#!">Sign out</a></li>
+					</ul>
+			    </ul>
+		    </div>
+		</nav>
+
+		<div class="conversation">
+			<ul class="conversation-content" id="conversation-content">
+				
+			</ul>
+
+			<div class="text-input-container">
+				<input type="text" class="z-depth-4" id="text-input" placeholder="Text message">
+				<a id="send-button" class="btn-floating waves-effect waves-light white">
+			  		<i class="material-icons grey-text">send</i>
+			  	</a>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/firebase.js"></script>
+	<script src="js/ui.js"></script>
+
+</body>
+</html>
